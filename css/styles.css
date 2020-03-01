@@ -1,3 +1,58 @@
+body{
+    min-width: 50%;
+    background-color: #e9e9ea !important;
+}
 .navbar-super{
     background-color: #3f51b57e !important;
+}
+.nav-color{
+    background-color: #5464bc !important;
+    min-height: auto;
+    max-height: fit-content;
+}
+.pt-6 {
+  padding-top: 8% !important;
+}
+.mt-5{
+    margin-top: 7% !important;
+}
+
+h1{
+    font-family: "Avengeance Heroic Avenger";
+    margin-block-start: 0;
+    margin-block-end: 0;
+
+    
+}
+.carousel-inner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    /*object-position: center center;*/
+}
+.img-gray:hover {
+    filter: grayscale(80%);
+}
+
+.carousel-inner{
+ height: 100%;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+}
+.navbar-nav-c {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    padding-left: 0;
+    /*margin-bottom: 0;*/
+    /*margin-top:0;*/
+    list-style: none;
+    flex-direction: row;
+    align-items: center;
 }
