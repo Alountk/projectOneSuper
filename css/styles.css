@@ -1,9 +1,14 @@
+h1{
+    font-family: "Avengeance Heroic Avenger";
+    margin-block-start: 0;
+    margin-block-end: 0;   
+}
 .form-control{
     text-align-last: center;
 }
 
-/*568px de alto*/
-@media (min-height:568px){
+/*first width*/
+@media (min-width:320px){
     main > div > section {
     top: 110px;
     }
@@ -35,10 +40,7 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 }
-
-/*640px*/
-
-@media (min-height:640px){
+@media (min-width:360px){
     main > div > section {
     top: 100px;
     }
@@ -46,29 +48,95 @@
         height: 100px;
     }
 }
-@media (min-height:667px){
+@media (min-width:375px){
     main > div > section {
     top: 100px;
     }
 }
-@media (min-height:731px){
+@media (min-width:411px){
+    main > div > section {
+    top: 95px;
+    }
+}
+@media (min-width:568px){
     main > div > section {
     top: 90px;
     }
-}
-@media (min-height:812px){
+    header > nav{
+        height: 100px!important;
+    }
     main > div > section {
-    top: 85px;
+        padding-bottom: 90px;
+    }
+    main > div > section > div > h3 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .form-control{
+        padding:0;
+        width: 80px;
+    }
+    .comm-info{
+        height: auto;
+    }
+    .img{
+        width: 300px;
+    }
+    .ih-item.square {
+        position: relative;
+        width: 316px;
+        height: auto;
+        border: 8px solid #fff;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     }
 }
-@media (min-height:1024px){
+@media (min-width:640px){
     main > div > section {
-    top: 10px;
+    top: 80px;
+    }
+    nav{
+        height: 100px;
     }
 }
-@media (min-width:1024px){
+@media (min-width:667){
     main > div > section {
-    top: -60px;
+    top: 1000px;
+    }
+}
+@media (min-width:731px){
+    main > div > section {
+    top: 75px;
+    }
+}
+@media (min-width:768px){
+    main > div > section {
+    top: 25px;
+    }
+}
+@media (min-width:812px){
+    main > div > section {
+    top: 65px;
+    }
+}
+@media (min-width:823px){
+    main > div > section {
+    top: 70px;
+    }
+}
+
+@media (min-width:1024px) and (min-height:1366px){
+    main > div > section {
+    top: -55px;
+    }
+}
+@media (min-width:1080px) and (min-height:1920px){
+    main > div > section {
+    top: -25px;
+    }
+}
+@media (min-width:1366px) and (min-height:1024px){
+    main > div > section {
+    top: -25px;
     }
 }
 body{
@@ -90,13 +158,7 @@ body{
     margin-top: 7% !important;
 }
 
-h1{
-    font-family: "Avengeance Heroic Avenger";
-    margin-block-start: 0;
-    margin-block-end: 0;
 
-    
-}
 .carousel-inner img {
     width: 100%;
     height: 400px;
@@ -130,7 +192,24 @@ h1{
     align-items: center;
 }
 
-
-/*main > div > section {
-    top:40px;
-}*/
+/* */
+.main-forms {
+    margin-top: 75px;
+    padding: 30px;
+  }
+  
+  .form-wrapper {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .form-wrapper > form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+  
