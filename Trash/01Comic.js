@@ -9,6 +9,8 @@ for (let i=1;i<=10;i++){
 
 }
 
+
+
 function getSuperHeroe(number){
     fetch(`https://superheroapi.com/api/10219098893255282/${number}`)
      .then(function(response) {

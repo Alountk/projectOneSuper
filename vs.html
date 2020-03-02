@@ -6,39 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Super!</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/Bootstrap-Overrides.css"> <!-- Stylesheet for Bootstrap Overrides -->
     <link rel="stylesheet "href="./css/ihover.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link href="//db.onlinewebfonts.com/c/0758a8993f076b2885436695361ea4e0?family=Avengeance+Heroic+Avenger" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top navbar-super m-2  justify-content-between">
-          <div>      
-              <button type="button" class="navbar-toggler nav-color text-light" data-toggle="collapse" data-target="#nav"><span class="navbar-icon"></span>Inicio</button>
-      
-              <div class="navbar-collapse justify-content-between collapse show" id="nav">
-                  <div class="">
-                      <ul class="navbar-nav-c text-center ma-0">
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="./index.html">Home</a></li>
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="./register.html">Log in / Sign up</a></li>
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="./heroesvillanos.html">Heroes / Villanos</a></li>
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#bestHV">El mejor Heroe / Villano</a></li>
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="./vs.html">Versus</a></li>
-                          <li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="./faqs.html">Faqs</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>    
-          <div>        
-              <form class="form-inline ml-3">
-                  <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search">
-                      <div class="input-group-append">
-                          <button type="button" class="btn navbar-super"><i class="fas fa-search text-muted"></i></button>
-                      </div>
-                  </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand mr-2 ml-2" href="#"><img class="mr-2" src="./img/ico/comics-ironman-red_97409.png" alt=""> Super!</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active"><a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="./register.html">Log in / Sign up</a></li>
+                <li class="nav-item"><a class="nav-link" href="./heroesvillanos.html">Heroes / Villanos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#bestHV">El mejor Heroe / Villano</a></li>
+                <li class="nav-item"><a class="nav-link" href="./vs.html">Versus</a></li>
+                <li class="nav-item"><a class="nav-link" href="./faqs.html">Faqs</a></li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
-          </div>
+            </div>
         </nav>
     </header>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
