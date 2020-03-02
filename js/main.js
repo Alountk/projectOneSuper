@@ -6,10 +6,7 @@ var name="";
 var url="";
 
 function callSuperHeroe1(){
-    console.log(numeroPJ);
-    
     const key = "10219098893255282";
-    console.log(`https://superheroapi.com/api.php/${key}/${id}`);
     var counter = 1;
     for (var i=0;i<3;i++){
         var id =Math.floor(Math.random()*730);
@@ -36,16 +33,33 @@ function callSuperHeroe1(){
 }
 
 function cambiarPortada(url,numeroPJ){
-    console.log(numeroPJ,url);
-    console.log(document.getElementById("portada"+numeroPJ).src);
     document.getElementById("portada"+numeroPJ).src=url;
   }
 function cambiarNombre(name,numeroPJ){
-    console.log(name,url);
     document.getElementById("name"+numeroPJ).innerHTML=name;
 }
-
 function randomSuperPortada(){
     callSuperHeroe1();
 }
+function comicVine(){
+  fetch(`https://comicvine.gamespot.com/api.php/characters/?api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39&format=json&sort=batman`)
+      .then((response) => {
+         const contentType = response.headers.get('content-type');
+         if (!contentType || !contentType.includes('application/json')) {
+           throw new TypeError("Oops, we haven't got JSON!");
+         }
+         return response.json();
+      })
+      .then((data) => {
+          /* process your data further */
+          console.log(data);
+
+      })
+      .catch((error) => console.error(error)); 
+}
+
+
+
+
 randomSuperPortada();
+comicVine();

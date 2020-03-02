@@ -30,7 +30,7 @@ function getSuperHeroe(number){
    //https://comicvine.gamespot.com/api/characters/?api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39
    //https://www.superheroapi.com/api.php/10219098893255282/search/superman Para busqueda
 
-  fetch(`https://comicvine.gamespot.com/api/characters/?api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39&format=json`)
+  fetch(`https://comicvine.gamespot.com/api/characters/?api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39&format=json&sort=batman`)
   .then(function(response) {
     return response.json();
   })
