@@ -22,9 +22,22 @@ function crearUsuario(name,email,phone,password){
 
 signupButton.addEventListener("click",function (event){
     event.preventDefault();
+    validandoRegistro();
     crearUsuario(name.value, email.value, password.value);
 
 })
+function validandoRegistro(){  
+    var name=name.value;  
+    var password=password.value;  
+      
+    if (name==null || name=="" ||){  
+      alert("El nombre esta en blanco");  
+      return false;  
+    }else if(password.length<6){  
+      alert("La contraseña al menos debe de tener 6 letras.");  
+      return false;  
+      }  
+    }  
 
 
 
