@@ -6,7 +6,7 @@
     font-family: "myfont2";
     src: url("../fonts/0758a8993f076b2885436695361ea4e0.woff2") format('woff');
 }
-@font-face {font-family: "Avengeance Heroic Avenger"; src: url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot"); src: url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff") format("woff"), url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.svg#Avengeance Heroic Avenger") format("svg"); }
+@font-face {font-family: "Avengeance Heroic Avenger"; src: url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot"); src: url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff") format("woff"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.svg#Avengeance Heroic Avenger") format("svg"); }
 h1,h2{
     font-family: "Avengeance Heroic Avenger";
     margin-block-start: 0;
