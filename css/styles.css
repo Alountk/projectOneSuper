@@ -1,5 +1,13 @@
+@font-face {
+    font-family: "myfont1";
+    src: url("../fonts/0758a8993f076b2885436695361ea4e0.woff") format('woff');
+}
+@font-face {
+    font-family: "myfont2";
+    src: url("../fonts/0758a8993f076b2885436695361ea4e0.woff2") format('woff');
+}
 h1,h2{
-    font-family: "Avengeance Heroic Avenger";
+    font-family: "myfont1";
     margin-block-start: 0;
     margin-block-end: 0;   
 }

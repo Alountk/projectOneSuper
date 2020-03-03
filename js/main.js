@@ -44,20 +44,20 @@ function randomSuperPortada(){
 }
 function comicVine(){
   const tokenCV="aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39";
-  fetch(`https://comicvine.gamespot.com/api/characters/?api_key=${tokenCV}&format=json&sort=batman`)
+  fetch(`https://comicvine.gamespot.com/api/characters/?format=json&sort=batman&api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39`)
       .then((response) => {
-         const contentType = response.headers.get('content-type');
-         if (!contentType || !contentType.includes('application/json')) {
-           throw new TypeError("Oops, we haven't got JSON!");
-         }
-         return response.json();
+        //  const contentType = response.headers.get('content-type');
+        //  if (!contentType || !contentType.includes('application/json')) {
+        //    throw new TypeError("Oops, we haven't got JSON!");
+        //  }
+        response.json();
       })
+      .catch((error) => console.error(error))
       .then((data) => {
           /* process your data further */
           console.log(data);
 
       })
-      .catch((error) => console.error(error)); 
 }
 
 
