@@ -50,5 +50,4 @@ https://github.com/Alountk/projectOneSuper/
 
 
 ### Slides
-URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+https://docs.google.com/presentation/d/1xcVCek05uuX7ZbjZ6M7QZb_lRzTJE--opReZ4V9GIhA/edit?usp=sharing
