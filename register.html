@@ -43,15 +43,15 @@
               <form class="signup-form" id="signup-form" action="">
       
                 <input type="text" id="name" placeholder="Nombre" autocomplete="off" />
-                <div id="errors-name"></div>
+                <div id="errors-name" class="error"></div>
                 <input type="email" id="email" placeholder="Email" autocomplete="off" />
-                <div id="errors-email"></div>
+                <div id="errors-email" class="error"></div>
                 <input type="text" id="usuario" placeholder="Usuario" autocomplete="off"/>
-                <div id="errors-usuario"></div>
+                <div id="errors-usuario" class="error"></div>
                 <input type="password" id="password" placeholder="Contraseña" autocomplete="off"/>
-                <div id="errors-password"></div>
+                <div id="errors-password" class="error"></div>
                 <input type="password" id="repeat-password" placeholder="Repite la contraseña" autocomplete="off"/>
-                <div id="errors-rep-pass"></div>
+                <div id="errors-rep-pass" class="error"></div>
       
                 <button type="submit" class="button" id="signup-button" >Registrar</button>
               </form>
@@ -66,12 +66,12 @@
       
               <form class="login-form" id="login-form" action="">
       
-                <input type="text" id="usuarioRegistrado" placeholder="Usuario" autocomplete="off" required />
-                <div id="errors-usuario-registrado"></div>
-                <input type="password" id="passwordRegistrado" placeholder="Contraseña" autocomplete="off" required />
-                <div id="errors-password-registrado"></div>
+                <input type="text" id="usuarioRegistrado" placeholder="Usuario" autocomplete="off" />
+                <div id="errors-usuario-registrado" class="error"></div>
+                <input type="password" id="passwordRegistrado" placeholder="Contraseña" autocomplete="off" />
+                <div id="errors-password-registrado" class="error"></div>
       
-                <button type="submit" class="button" id="login-button" >Registrar</button>
+                <button type="submit" class="button" id="login-button" >Entrar</button>
               </form>
       
               <div class="errors-container2"></div>

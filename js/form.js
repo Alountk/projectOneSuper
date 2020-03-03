@@ -6,7 +6,9 @@ let errorsEmail = document.getElementById("errors-email");
 let user = document.forms[1][2];
 let errorsUsuario = document.getElementById("errors-usuario");
 let password = document.forms[1][3];
+let errorsPassword = document.getElementById("errors-password");
 let repeatPassword = document.forms[1][4];
+let errorsRepeatPassword = document.getElementById("errors-rep-pass");
 let regUser = document.forms[2][0];
 let regPass = document.forms[2][1];
 let signupButton = document.getElementById("signup-button");
@@ -17,21 +19,32 @@ let usersDB = JSON.parse(localStorage.getItem("users"));
 
 name.addEventListener("blur", nameVerify, true);
 email.addEventListener("blur", emailVerify, true);
-user.addEventListener("blur",userVerify, true);
+user.addEventListener("blur", userVerify, true);
 password.addEventListener("blur", passwordVerify, true);
 
+//Boton de registro
 signupButton.addEventListener("click", function(event) {
   event.preventDefault();
-  borrarErrores();
-  console.log("llego aqui");
-  if (validandoRegistro()) {
-    console.log("validando");
+  if (validandoRegistro()){
+    console.log("hey")
   }
+  if(checkEmailInDB(email)){
+    window.alert("Email ya utilizado");
+    return false;
+  }else{
+    crearUsuario(name.value, email.value, email.value, password.value);
+  }
+  
 });
+//Boton de Login
+
+
+
+
 
 //funciones
-function crearUsuario(name, email, phone, password) {
-  const nuevoUsuario = new Usuario(name, email, phone, password);
+function crearUsuario(name, email, user, password) {
+  const nuevoUsuario = new Usuario(name, email, user, password);
 
   if (usersDB) {
     usersDB.push(nuevoUsuario);
@@ -67,7 +80,7 @@ function validandoRegistro() {
     email.focus();
     return false;
   }
-  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/.test(email)) {
+  if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email.value)) {
     email.style.border = "1px solid red";
     document.getElementById("email").style.color = "red";
     errorsEmail.textContent = "Email no esta escrito de manera correcta";
@@ -75,9 +88,8 @@ function validandoRegistro() {
     email.focus();
     return false;
   }
-
+  // validando usuario
   if (user.value == "") {
-    // validando usuario
     user.style.border = "1px solid red";
     document.getElementById("usuario").style.color = "red";
     errorsUsuario.textContent = "Se requiere Usuario";
@@ -94,26 +106,55 @@ function validandoRegistro() {
     user.focus();
     return false;
   }
-
   // validando password
   if (password.value == "") {
     password.style.border = "1px solid red";
     document.getElementById("password").style.color = "red";
-    password_confirm.style.border = "1px solid red";
-    password_error.textContent = "Password is required";
+    errorsRepeatPassword.style.border = "1px solid red";
+    errorsPassword.textContent = "Se requiere Password";
     password.focus();
     return false;
   }
   // verificar los dos passwords
-  if (password.value != password_confirm.value) {
+  if (password.value != repeatPassword.value) {
     password.style.border = "1px solid red";
     document.getElementById("repeat-password").style.color = "red";
-    password_confirm.style.border = "1px solid red";
-    password_error.innerHTML = "The two passwords do not match";
+    errorsRepeatPassword.style.border = "1px solid red";
+    errorsPassword.innerHTML = "The two passwords do not match";
     return false;
   }
 }
-// event handler functions
+function checkEmailInDB (email){
+    let mailExiste = false;
+    if (!usersDB){
+        return false;
+    }
+    else{
+        usersDB.forEach(user=>{
+            if (user.mail === email.value){
+                mailExiste=true;
+            }
+        });
+    }
+    return mailExiste;
+    //console.log(mailExiste);
+}
+
+function checkUsuario(usersDB){
+    let usuarioExiste = false;
+    if (!usersDB){
+        return true;
+    }
+    else{
+        usersDB.forEach(user=>{
+            if (user.mail === user.value){
+                usuarioExists=false;
+            }
+        });
+    }
+    return usuarioExiste;
+}
+// Eventos de relleno
 function nameVerify() {
   if (name.value != "") {
     name.style.border = "1px solid #5e6e66";
@@ -123,20 +164,12 @@ function nameVerify() {
   }
 }
 function userVerify() {
-    if (user.value != "") {
-      user.style.border = "1px solid #5e6e66";
-      document.getElementById("name").style.color = "#5e6e66";
-      errorsName.innerHTML = "";
-      return true;
-    }
+  if (email.value != "") {
+    email.style.border = "1px solid #5e6e66";
+    document.getElementById("usuario").style.color = "#5e6e66";
+    errorsUsuario.innerHTML = "";
+    return true;
   }
-function userVerify() {
-    if (email.value != "") {
-      email.style.border = "1px solid #5e6e66";
-      document.getElementById("user").style.color = "#5e6e66";
-      errorsUsuario.innerHTML = "";
-      return true;
-    }
 }
 function emailVerify() {
   if (email.value != "") {
@@ -151,18 +184,13 @@ function passwordVerify() {
     password.style.border = "1px solid #5e6e66";
     document.getElementById("repeat-password").style.color = "#5e6e66";
     document.getElementById("password").style.color = "#5e6e66";
-    password_error.innerHTML = "";
+    errorsPassword.innerHTML = "";
     return true;
   }
-  if (password.value === password_confirm.value) {
+  if (password.value === repeatPassword.value) {
     password.style.border = "1px solid #5e6e66";
     document.getElementById("repeat-password").style.color = "#5e6e66";
-    password_error.innerHTML = "";
+    errorsPassword.innerHTML = "";
     return true;
   }
-}
-
-function borrarErrores() {
-  let errors = [...document.getElementsByClassName("error")];
-  errors ? errors.forEach(error => error.remove()) : null;
 }
