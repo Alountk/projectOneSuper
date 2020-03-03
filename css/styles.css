@@ -7,10 +7,14 @@
     src: url("../fonts/0758a8993f076b2885436695361ea4e0.woff2") format('woff');
 }
 @font-face {font-family: "Avengeance Heroic Avenger"; src: url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot"); src: url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.eot?#iefix") format("embedded-opentype"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff2") format("woff2"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.woff") format("woff"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.ttf") format("truetype"), url("https://db.onlinewebfonts.com/t/0758a8993f076b2885436695361ea4e0.svg#Avengeance Heroic Avenger") format("svg"); }
-h1,h2{
+h1,h2,h3{
     font-family: "Avengeance Heroic Avenger";
     margin-block-start: 0;
     margin-block-end: 0;   
+}
+h3{
+    color: rgb(196, 103, 154);
+    text-shadow: 2px 2px rgb(7, 6, 12);
 }
 .text-shadow{
     text-shadow: 2px 2px rgb(7, 6, 12);
@@ -83,8 +87,8 @@ body{
 
 
 .carousel-inner img {
-    width: auto;
-    height: 700px;
+    width: 700px;
+    height: auto;
     object-fit: cover;
     /* object-fit: scale-down; */
     
@@ -133,4 +137,12 @@ body{
     width: 100%;
     max-width: 400px;
   }
-  
+
+  .main2{
+      margin-top: 150px;
+  }
+  .ih-item.square{
+    max-width: 600px;
+    height: auto;
+    border: 8px solid #fff;
+  }

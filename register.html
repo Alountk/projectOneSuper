@@ -30,7 +30,7 @@
               </ul>
               <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button id="butSearch"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
               </form>
             </div>
         </nav>
@@ -42,16 +42,21 @@
       
               <form class="signup-form" id="signup-form" action="">
       
-                <input type="text" id="name" placeholder="Nombre" autocomplete="off" required />
-                <input type="email" id="email" placeholder="Email" autocomplete="off" required />
-                <input type="text" id="usuario" placeholder="Usuario" autocomplete="off" required />
-                <input type="password" id="password" placeholder="Contraseña" autocomplete="off" required />
-                <input type="password" id="repeat-password" placeholder="Repite la contraseña" autocomplete="off" required />
+                <input type="text" id="name" placeholder="Nombre" autocomplete="off" />
+                <div id="errors-name" class="error"></div>
+                <input type="email" id="email" placeholder="Email" autocomplete="off" />
+                <div id="errors-email" class="error"></div>
+                <input type="text" id="usuario" placeholder="Usuario" autocomplete="off"/>
+                <div id="errors-usuario" class="error"></div>
+                <input type="password" id="password" placeholder="Contraseña" autocomplete="off"/>
+                <div id="errors-password" class="error"></div>
+                <input type="password" id="repeat-password" placeholder="Repite la contraseña" autocomplete="off"/>
+                <div id="errors-rep-pass" class="error"></div>
       
                 <button type="submit" class="button" id="signup-button" >Registrar</button>
               </form>
       
-              <div class="errors-container"></div>
+              
             </div>
       
         </section>
@@ -59,12 +64,14 @@
       
             <div class="form-wrapper">
       
-              <form class="signup-form" id="signup-form" action="">
+              <form class="login-form" id="login-form" action="">
       
-                <input type="text" id="usuario" placeholder="Usuario" autocomplete="off" required />
-                <input type="password" id="password" placeholder="Contraseña" autocomplete="off" required />
+                <input type="text" id="usuarioRegistrado" placeholder="Usuario" autocomplete="off" />
+                <div id="errors-usuario-registrado" class="error"></div>
+                <input type="password" id="passwordRegistrado" placeholder="Contraseña" autocomplete="off" />
+                <div id="errors-password-registrado" class="error"></div>
       
-                <button type="submit" class="button" id="login-button" >Registrar</button>
+                <button type="submit" class="button" id="login-button" >Entrar</button>
               </form>
       
               <div class="errors-container2"></div>
