@@ -35,7 +35,7 @@ function callSuperHeroe1(){
 
 function cambiarPortada(url,numeroPJ){
     document.getElementById("portada"+numeroPJ).src=url;
-  }
+}
 function cambiarNombre(name,numeroPJ){
     document.getElementById("name"+numeroPJ).innerHTML=name;
 }
