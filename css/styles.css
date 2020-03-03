@@ -15,16 +15,37 @@ h1,h2{
     .main{
         margin-top: 80px;
     }
+    .carousel-inner img {
+        width: auto;
+        height: 700px;
+        /* object-fit: cover; */
+        /* object-fit: scale-down; */
+        object-fit: contain;
+    }
 }    
 
 @media (min-width:768px){
     .main{
         margin-top: 30px;
     }
+    .carousel-inner img {
+        width: auto;
+        height: 700px;
+        /* object-fit: cover; */
+        /* object-fit: scale-down; */
+        object-fit: contain;
+    }
 }
 @media (min-width:1024px){
     .main{
         margin-top: -40px;
+    }
+    .carousel-inner img {
+        width: auto;
+        height: 700px;
+        /* object-fit: cover; */
+        /* object-fit: scale-down; */
+        object-fit: contain;
     }
 }
  
@@ -55,9 +76,9 @@ body{
 .carousel-inner img {
     width: auto;
     height: 700px;
-    /* object-fit: cover; */
+    object-fit: cover;
     /* object-fit: scale-down; */
-    object-fit: contain;
+    
 }
 .img-gray:hover {
     filter: grayscale(80%);

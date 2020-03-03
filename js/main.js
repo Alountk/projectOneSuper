@@ -24,6 +24,7 @@ function callSuperHeroe1(){
           url=data.image.url;
           cambiarPortada(url,counter);
           cambiarNombre(name,counter);
+          console.log(data)
           counter++;
 
       })
@@ -42,7 +43,8 @@ function randomSuperPortada(){
     callSuperHeroe1();
 }
 function comicVine(){
-  fetch(`https://comicvine.gamespot.com/api.php/characters/?api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39&format=json&sort=batman`)
+  const tokenCV="aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39";
+  fetch(`https://comicvine.gamespot.com/api/characters/?api_key=${tokenCV}&format=json&sort=batman`)
       .then((response) => {
          const contentType = response.headers.get('content-type');
          if (!contentType || !contentType.includes('application/json')) {
