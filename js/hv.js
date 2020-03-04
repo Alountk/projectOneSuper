@@ -95,4 +95,3 @@ function doesFileExist()
   //       return true;
   //   }
 }
-doesFileExist();

@@ -8,13 +8,15 @@ let errorsPassword = document.getElementById("errors-password");
 let repeatPassword = document.forms[1][3];
 let errorsRepeatPassword = document.getElementById("errors-rep-pass");
 let regMail = document.forms[2][0];
+let errRegMail = document.getElementById("errors-mail-registrado");
 let regPass = document.forms[2][1];
+let errRegPass = document.getElementById("errors-password-registrado");
 let signupButton = document.getElementById("signup-button");
 let loginButton = document.getElementById("login-button");
 //Asigno el localStorage
 let usersDB = JSON.parse(localStorage.getItem("users"));
 let currentUsersDB = JSON.parse(localStorage.getItem("currentUsers"));
-//Listener
+//Listener + blur
 
 name.addEventListener("blur", nameVerify, true);
 email.addEventListener("blur", emailVerify, true);
@@ -24,25 +26,29 @@ password.addEventListener("blur", passwordVerify, true);
 signupButton.addEventListener("click", function(event) {
   event.preventDefault();
   if (validandoRegistro()){
-    console.log("hey")
-  }
   if(checkEmailInDB(email)){
-    window.alert("Email ya utilizado");
-    return false;
-  }else{
-    crearUsuario(name.value, email.value, password.value);
+      window.alert("Email ya utilizado");
+      return;
+    }else{
+      crearUsuario(name.value, email.value, password.value);
+    }
   }
+  
   
 });
 //Boton de Login
-
+loginButton.addEventListener("click", event => {
+  event.preventDefault();
+  checkEmailAndPassword(regMail.value,regPass.value);
+})
 
 
 
 
 //funciones
-function crearUsuario(name, email, user, password) {
-  const nuevoUsuario = new Usuario(name, email, user, password);
+//Para crear usuarios
+function crearUsuario(name, email, password) {
+  const nuevoUsuario = new Usuario(name, email, password);
 
   if (usersDB) {
     usersDB.push(nuevoUsuario);
@@ -51,6 +57,7 @@ function crearUsuario(name, email, user, password) {
   }
   localStorage.setItem("users", JSON.stringify(usersDB));
 }
+//Validar el registro
 function validandoRegistro() {
   // validando nombre
   if (name.value == "") {
@@ -76,6 +83,7 @@ function validandoRegistro() {
     errorsEmail.textContent = "Se requiere email";
     errorsEmail.style.color = "red";
     email.focus();
+    email.innerHTML = "";
     return false;
   }
   if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email.value)) {
@@ -84,6 +92,7 @@ function validandoRegistro() {
     errorsEmail.textContent = "Email no esta escrito de manera correcta";
     errorsEmail.style.color = "red";
     email.focus();
+    email.innerHTML = "";
     return false;
   }
   // validando password
@@ -102,8 +111,11 @@ function validandoRegistro() {
     document.getElementById("repeat-password").style.color = "red";
     errorsRepeatPassword.style.border = "1px solid red";
     errorsPassword.innerHTML = "The two passwords do not match";
+    password.value="";
+    repeatPassword.value="";
     return false;
   }
+  return true;
 }
 function checkEmailInDB (email){
     let mailExiste = false;
@@ -160,4 +172,61 @@ function passwordVerify() {
     errorsPassword.innerHTML = "";
     return true;
   }
+}
+//Crear current user
+function crearCurrentUser(email, password) {
+  console.log("llego aquí");
+  const currentUser = new Usuario(email, password);
+
+  if (currentUsersDB) {
+    currentUsersDB.push(currentUser);
+  } else {
+    currentUsersDB = [currentUser];
+  }
+  localStorage.setItem("currentUsers", JSON.stringify(currentUsersDB));
+}
+
+//Chequear 
+function checkEmailAndPassword(email,pass){
+  if (email === ""){
+    errRegMail.style.border = "1px solid red";
+    errRegMail.textContent = "Email esta vacio";
+    errRegMail.style.color = "red";
+    regMail.focus();
+    console.log("Email esta vacio");
+    return;
+  }else if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(email)) {
+    errRegMail.style.border = "1px solid red";
+    errRegMail.textContent = "El mail no se ha escrito de manera correcta";
+    errRegMail.style.color = "red";
+    regMail.focus();
+    regMail.value="";
+    return;
+  }else if(pass === ""){
+    errRegPass.style.border = "1px solid red";
+    errRegPass.textContent = "Password esta vacio";
+    errRegPass.style.color = "red";
+    regPass.focus();
+    return;
+  }
+  mailAndPass = usersDB.map(user => {
+    if (!email===user.email){
+      errRegMail.style.border = "1px solid red";
+      errRegMail.textContent = "Este mail no existe";
+      errRegMail.style.color = "red";
+      regMail.value="";
+      regMail.focus();
+      return;
+      
+    }else if(!pass==user.password){
+      errRegPass.style.border = "1px solid red";
+      errRegPass.textContent = "Password esta vacio";
+      errRegPass.style.color = "red";
+      regPass.focus();
+      return;
+    }else{
+      crearCurrentUser(email, pass);
+    }
+  });
+
 }
