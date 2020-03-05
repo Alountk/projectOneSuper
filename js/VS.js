@@ -73,7 +73,7 @@ function searchHV1(nameSearch) {
       document.getElementsByTagName("img")[2].src=img;
       document.getElementsByTagName("h2")[0].innerText=`${name}`;
       let divTest=document.createElement('div');
-      divTest.innerHTML = `<div class="hv1"><h4>Stats</h4><p class="">Inteligencia: ${int} <br>Fuerza:${stre}  <br>Velocidad:${speed}<br>Durabilidad: ${dur}<br>Poder${pow}<br>Combat:${com}</p></div>`;
+      divTest.innerHTML = `<div class="hv1"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
       
       powerStats1.forEach(stat =>{
           totalStats1+=stat*1;
@@ -129,7 +129,7 @@ function searchHV2(nameSearch) {
         document.getElementsByTagName("img")[4].src=img;
         document.getElementsByTagName("h2")[1].innerText=`${name}`;
         let divTest=document.createElement('div');
-        divTest.innerHTML = `<div class="hv2"><h4>Stats</h4><p class="">Inteligencia: ${int} <br>Fuerza:${stre}  <br>Velocidad:${speed}<br>Durabilidad: ${dur}<br>Poder${pow}<br>Combat:${com}</p></div>`;
+        divTest.innerHTML = `<div class="hv1"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
         
         powerStats2.forEach(stat =>{
             totalStats2+=stat*1;
