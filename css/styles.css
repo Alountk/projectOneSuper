@@ -26,7 +26,10 @@ h3{
 /*first width*/
 @media (min-width:320px){
     .main{
-        margin-top: 80px;
+        /* margin-top: 80px; */
+    }
+    .imagen-mar{
+
     }
     .carousel-inner img {
         width: auto;
@@ -87,9 +90,9 @@ body{
 
 
 .carousel-inner img {
-    width: 700px;
+    width: 100px;
     height: auto;
-    object-fit: cover;
+    /* object-fit: cover; */
     /* object-fit: scale-down; */
     
 }
@@ -145,4 +148,16 @@ body{
     max-width: 600px;
     height: auto;
     border: 8px solid #fff;
+  }
+  .search{
+      margin-top: 50px;
+      margin-bottom: 50px;
+  }
+  .HV-img{
+      width: 300px;
+  }
+  .VS-img{
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
   }

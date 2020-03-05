@@ -24,7 +24,6 @@ function callSuperHeroe1(){
           url=data.image.url;
           cambiarPortada(url,counter);
           cambiarNombre(name,counter);
-          console.log(data)
           counter++;
 
       })
@@ -42,25 +41,8 @@ function cambiarNombre(name,numeroPJ){
 function randomSuperPortada(){
     callSuperHeroe1();
 }
-function comicVine(){
-  const tokenCV="aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39";
-  fetch(`https://comicvine.gamespot.com/api/characters/?format=json&sort=batman&api_key=aead5e3fc45f4a8aaade28c0cdc6a27210eb7b39`,{ mode: 'no-cors'})
-      .then((response) => {
-         const contentType = response.headers.get('content-type');
-         if (!contentType || !contentType.includes('application/json')) {
-           throw new TypeError("Oops, we haven't got JSON!");
-         }
-        response.json();
-      })
-      .then((data) => {
-          /* process your data further */
-          console.log(data);
-
-      })
-}
 
 
 
 
 randomSuperPortada();
-comicVine();
