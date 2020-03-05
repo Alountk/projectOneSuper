@@ -1,4 +1,4 @@
-let datosSearch = document.forms[1][0];
+let datosSearch = document.forms[0][0];
 let buttonSearch = document.getElementById("btn-search");
 let busCont = document.getElementById("busqueda");
 buttonSearch.addEventListener("click", function(event) {
