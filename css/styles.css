@@ -26,7 +26,10 @@ h3{
 /*first width*/
 @media (min-width:320px){
     .main{
-        margin-top: 80px;
+        /* margin-top: 80px; */
+    }
+    .imagen-mar{
+
     }
     .carousel-inner img {
         width: auto;
@@ -87,9 +90,9 @@ body{
 
 
 .carousel-inner img {
-    width: 700px;
+    width: 100px;
     height: auto;
-    object-fit: cover;
+    /* object-fit: cover; */
     /* object-fit: scale-down; */
     
 }
@@ -138,11 +141,56 @@ body{
     max-width: 400px;
   }
 
-  .main2{
+.main2{
       margin-top: 150px;
   }
+  .main3{
+    margin-top: 150px;
+}
   .ih-item.square{
     max-width: 600px;
     height: auto;
     border: 8px solid #fff;
   }
+  .search{
+      margin-top: 50px;
+      margin-bottom: 50px;
+  }
+  .HV-img{
+      width: 300px;
+      margin: 30px 0;
+      border
+  }
+  .VS-img{
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  .escondido {
+    visibility: hidden;
+}
+
+.width100{
+    width: 100%!important;
+    margin: 0!important;
+}
+.p-style {
+    width: 300px;
+}
+//probando
+/* .w-100{
+    margin-top: 60px;
+    width: 100%!important;
+    height: 600px!important;
+
+} */
+
+/* .carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */
