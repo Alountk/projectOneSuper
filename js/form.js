@@ -13,6 +13,9 @@ let regPass = document.forms[1][1];
 let errRegPass = document.getElementById("errors-password-registrado");
 let signupButton = document.getElementById("register-button");
 let loginButton = document.getElementById("login-button");
+let loginOut = document.getElementById("login-out");
+let saludo = document.querySelector(".saludo");
+
 //Asigno el localStorage
 let usersDB = JSON.parse(localStorage.getItem("users"));
 let currentUsersDB = JSON.parse(localStorage.getItem("currentUsers"));
@@ -42,17 +45,22 @@ loginButton.addEventListener("click", event => {
   event.preventDefault();
   if (checkEmailAndPassword(regMail.value,regPass.value)){
     if(!checkInDBLogin(regMail.value,regPass.value)){
-      console.log("esta bien el correo");
       // ;
       
 
     }else{
-      console.log("llego al else esta mal el correo");
       return;
     }
   }
   
 });
+
+//boton Logout
+loginOut.addEventListener("click", event => {
+  event.preventDefault();
+  console.log("funciono");
+  logOut();
+})
 
 
 
@@ -242,8 +250,22 @@ function checkInDBLogin(email,pass){
       regPass.focus();
       return false;
     }
-  crearCurrentUser(regMail.value,regPass.value)
-  console.log("llego al return true");
+  let name=user.name;  
+  crearCurrentUser(regMail.value,regPass.value);
+  document.querySelector(".panel").classList.add("d-none");
+  saludo.style.color = "black";
+  saludo.innerHTML=`<div class="pandora-box"><div class="text-center"><h2>Bienvenido ${name}</h2></div><div class=" col-sm-offset-3 col text-center"></div></div>`;
+  document.querySelector(".logout").classList.remove("d-none");
+  regMail.value="";
+  regPass.value="";
 	return true;
 });
+}
+function logOut(){
+  let pandora=document.querySelector(".pandora-box");
+  saludo.removeChild(pandora);
+  document.querySelector(".logout").classList.add("d-none");
+  document.querySelector(".panel").classList.remove("d-none");
+  localStorage.removeItem("currentUsers");
+
 }

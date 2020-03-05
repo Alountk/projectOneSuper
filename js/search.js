@@ -29,7 +29,7 @@ function search(nameSearch){
           url=data.results.image.url;
           // doesFileExist(url);
           name=data.name;
-          cambiarNombre(name,counter);
+          cambiarNombre2(name,counter);
           cambiarImagenes(url,counter);
           const fN="full-name";
           fullName=data.biography[fN];
@@ -54,7 +54,7 @@ function intDiv(div,numeroPJ){
   let info = document.querySelector(".div"+numeroPJ);
   info.innerHTML=div;
 }
-function cambiarNombre(nombre,numeroPJ){
+function cambiarNombre2(nombre,numeroPJ){
   let info = document.querySelector(".h3"+numeroPJ);
   info.innerHTML=nombre;
 }
