@@ -23,11 +23,13 @@ buttonSearchHV1.addEventListener("click", function(event) {
   
   event.preventDefault();
   searchHV1(datosSearchHV1.value);
+  document.getElementsByTagName("img")[2].classList.remove("d-none");
 });
 buttonSearchHV2.addEventListener("click", function(event) {
   
   event.preventDefault();
   searchHV2(datosSearchHV2.value);
+  document.getElementsByTagName("img")[4].classList.remove("d-none");
 });
 
 buttonVS.addEventListener("click", function(event) {
@@ -53,7 +55,8 @@ function searchHV1(nameSearch) {
       if (document.querySelector(".hv1")){
         divHV1.removeChild(divHV1.firstChild);
       }
-      if (document.querySelector(".hvVictory")){
+      if (document.querySelector(".hvVictory")!=null){
+        console.log("estoy aquí!");
         result.firstChild.remove();
       }
       var img = data.results[0].image.url;
@@ -108,9 +111,12 @@ function searchHV2(nameSearch) {
         if (document.querySelector(".hv2")){
           divHV2.removeChild(divHV2.firstChild);
         }
-        if (document.querySelector(".hvVictory")){
+        if (document.querySelector(".hvVictory")!=null){
+          console.log("estoy aquí!");
           result.firstChild.remove();
+          
         }
+        
 
         var img = data.results[0].image.url;
         var name = data.results[0].name;
@@ -129,7 +135,7 @@ function searchHV2(nameSearch) {
         document.getElementsByTagName("img")[4].src=img;
         document.getElementsByTagName("h2")[1].innerText=`${name}`;
         let divTest=document.createElement('div');
-        divTest.innerHTML = `<div class="hv1"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
+        divTest.innerHTML = `<div class="hv2"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
         
         powerStats2.forEach(stat =>{
             totalStats2+=stat*1;

@@ -141,9 +141,12 @@ body{
     max-width: 400px;
   }
 
-  .main2{
+.main2{
       margin-top: 150px;
   }
+  .main3{
+    margin-top: 150px;
+}
   .ih-item.square{
     max-width: 600px;
     height: auto;
@@ -163,3 +166,31 @@ body{
     margin-left: auto; 
     margin-right: auto;
   }
+  .escondido {
+    visibility: hidden;
+}
+
+.width100{
+    width: 100%!important;
+    margin: 0!important;
+}
+.p-style {
+    width: 300px;
+}
+//probando
+/* .w-100{
+    margin-top: 60px;
+    width: 100%!important;
+    height: 600px!important;
+
+} */
+
+/* .carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  } */
