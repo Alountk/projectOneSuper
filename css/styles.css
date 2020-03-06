@@ -32,7 +32,6 @@ h3{
 
     }
     .carousel-inner img {
-        width: auto;
         height: 700px;
         /* object-fit: cover; */
         /* object-fit: scale-down; */
@@ -90,7 +89,6 @@ body{
 
 
 .carousel-inner img {
-    width: 100px;
     height: auto;
     /* object-fit: cover; */
     /* object-fit: scale-down; */
@@ -153,7 +151,7 @@ body{
     border: 8px solid #fff;
   }
   .search{
-      margin-top: 50px;
+      margin-top: 15px;
       margin-bottom: 50px;
   }
   .HV-img{
