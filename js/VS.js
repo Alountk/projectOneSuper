@@ -139,12 +139,12 @@ function elMasPoderoso(hv1,hv2){
   let HV2 = document.getElementById("HV2").innerHTML;
   
   if (hv1>hv2){
-    let hvVictory=document.createElement('h2');
+    let hvVictory=document.createElement('h3');
     hvVictory.innerHTML=`${HV2} no es rival para ${HV1}`;
     result.appendChild(hvVictory);
     console.log(document.getElementById("HV1").innerHTML+"es mas fuerte!");
   }else if(hv2>hv1){
-    let hvVictory=document.createElement('h2');
+    let hvVictory=document.createElement('h3');
     hvVictory.innerHTML=`${HV1} no es rival para ${HV2}`;
     hvVictory.classList.add("hvVictory");
     result.appendChild(hvVictory);
@@ -152,7 +152,7 @@ function elMasPoderoso(hv1,hv2){
     console.log(document.getElementById("HV2").innerHTML+"es más fuerte!");
     
   }else if (hv2===hv1){
-    let hvVictory=document.createElement('h2');
+    let hvVictory=document.createElement('h3');
     hvVictory.innerHTML=`${HV1}, ${HV2} son igual de poderos@s.`;
     result.appendChild(hvVictory);
     hvVictory.classList.add("hvVictory");

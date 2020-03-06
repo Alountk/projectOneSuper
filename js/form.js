@@ -52,6 +52,7 @@ loginButton.addEventListener("click", event => {
       return;
     }
   }
+
   
 });
 
@@ -76,6 +77,14 @@ function crearUsuario(name, email, password) {
     usersDB = [nuevoUsuario];
   }
   localStorage.setItem("users", JSON.stringify(usersDB));
+  document.querySelector(".panel").classList.add("d-none");
+  saludo.style.color = "black";
+  saludo.innerHTML=`<div class="pandora-box"><div class="text-center"><h2>Registrado</h2></div><div class=" col-sm-offset-3 col text-center"></div></div>`;
+  document.querySelector(".logout").classList.remove("d-none");
+  name.value="";
+  email.value="";
+  password.value="";
+  repeatPassword.value="";
 }
 //Validar el registro
 function validandoRegistro() {
@@ -137,6 +146,8 @@ function validandoRegistro() {
   }
   return true;
 }
+
+
 function checkEmailInDB (email){
     let mailExiste = false;
     if (!usersDB){
@@ -153,46 +164,6 @@ function checkEmailInDB (email){
     //console.log(mailExiste);
 }
 
-// Eventos de relleno
-// function nameVerify() {
-//   if (name.value != "") {
-//     name.style.border = "1px solid #5e6e66";
-//     document.getElementById("name").style.color = "#5e6e66";
-//     errorsName.innerHTML = "";
-//     return true;
-//   }
-// }
-// function userVerify() {
-//   if (email.value != "") {
-//     email.style.border = "1px solid #5e6e66";
-//     document.getElementById("usuario").style.color = "#5e6e66";
-//     errorsUsuario.innerHTML = "";
-//     return true;
-//   }
-// }
-// function emailVerify() {
-//   if (email.value != "") {
-//     email.style.border = "1px solid #5e6e66";
-//     document.getElementById("email").style.color = "#5e6e66";
-//     errorsEmail.innerHTML = "";
-//     return true;
-//   }
-// }
-// function passwordVerify() {
-//   if (password.value != "") {
-//     password.style.border = "1px solid #5e6e66";
-//     document.getElementById("repeat-password").style.color = "#5e6e66";
-//     document.getElementById("password").style.color = "#5e6e66";
-//     errorsPassword.innerHTML = "";
-//     return true;
-//   }
-//   if (password.value === repeatPassword.value) {
-//     password.style.border = "1px solid #5e6e66";
-//     document.getElementById("repeat-password").style.color = "#5e6e66";
-//     errorsPassword.innerHTML = "";
-//     return true;
-//   }
-// }
 //Crear current user
 function crearCurrentUser(email, password) {
   console.log("llego aquí");
@@ -204,6 +175,9 @@ function crearCurrentUser(email, password) {
     currentUsersDB = [currentUser];
   }
   localStorage.setItem("currentUsers", JSON.stringify(currentUsersDB));
+  email.value="";
+  password.value="";
+
 }
 
 //Chequear 
@@ -254,7 +228,7 @@ function checkInDBLogin(email,pass){
   crearCurrentUser(regMail.value,regPass.value);
   document.querySelector(".panel").classList.add("d-none");
   saludo.style.color = "black";
-  saludo.innerHTML=`<div class="pandora-box"><div class="text-center"><h2>Bienvenido ${name}</h2></div><div class=" col-sm-offset-3 col text-center"></div></div>`;
+  saludo.innerHTML=`<div class="pandora-box"><div class="text-center"><h2 class="col-12">Bienvenido ${name}</h2></div><div class=" col-sm-offset-3 col text-center"></div></div>`;
   document.querySelector(".logout").classList.remove("d-none");
   regMail.value="";
   regPass.value="";

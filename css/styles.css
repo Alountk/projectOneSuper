@@ -174,7 +174,6 @@ body{
 .p-style {
     width: 300px;
 }
-//probando
 /* .w-100{
     margin-top: 60px;
     width: 100%!important;
@@ -191,3 +190,15 @@ body{
     -o-background-size: cover;
     background-size: cover;
   } */
+.img-background{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)),
+    url(../img/A1-header.jpg);
+    background-size: cover;
+}
+
+/* .img-background{
+    background-image: gradient  
+    url(../img/A1-header.jpg);
+    background-size: cover;
+    z-index: -1;
+} */
