@@ -63,6 +63,10 @@ h3{
         object-fit: contain;
     }
 }
+.avenger{
+    font-family: "Avengeance Heroic Avenger";
+    font-size: 50px;
+}
  
 .main{
     margin-top:100px;
@@ -86,7 +90,9 @@ body{
 .mt-5{
     margin-top: 7% !important;
 }
-
+.mt-6{
+    margin-top: 120px!important;
+}
 
 .carousel-inner img {
     height: auto;
@@ -202,3 +208,8 @@ body{
     background-size: cover;
     z-index: -1;
 } */
+#butVS{
+    padding: 0;
+    border: none;
+    background: none;
+}
