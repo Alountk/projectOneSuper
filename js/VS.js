@@ -40,6 +40,7 @@ buttonVS.addEventListener("click", function(event) {
 
 //BUSQUEDA DEL PRIMERO
 function searchHV1(nameSearch) {
+  divHV1.innerHTML="";
   fetch(
     `https://www.superheroapi.com/api.php/10219098893255282/search/${nameSearch}`
   )
@@ -52,13 +53,6 @@ function searchHV1(nameSearch) {
     })
     .then(data => {
       /* process your data further */
-      if (document.querySelector(".hv1")){
-        divHV1.removeChild(divHV1.firstChild);
-      }
-      if (document.querySelector(".hvVictory")!=null){
-        console.log("estoy aquí!");
-        result.firstChild.remove();
-      }
       var img = data.results[0].image.url;
       var name = data.results[0].name;
       var int = data.results[0].powerstats.intelligence;
@@ -85,8 +79,6 @@ function searchHV1(nameSearch) {
         totalStats1= Math.floor(totalStats1/6);
         
         divHV1.appendChild(divTest);
-        
-        console.log(totalStats1);
         
     })
     .catch(error => console.error(error));
@@ -151,20 +143,18 @@ function searchHV2(nameSearch) {
   //   document.querySelector(".busqueda").classList.remove("d-none");
   }
 function elMasPoderoso(hv1,hv2){
-  if (document.querySelector(".hvVictory")){
-    result.firstChild.remove();
-  }
+  result.innerHTML="";
   let HV1 = document.getElementById("HV1").innerHTML; 
   let HV2 = document.getElementById("HV2").innerHTML;
   
   if (hv1>hv2){
     let hvVictory=document.createElement('h2');
-    hvVictory.innerHTML=`${HV1} es más poderoso que ${HV2}`;
+    hvVictory.innerHTML=`${HV1} es más poderos@ que ${HV2}`;
     result.appendChild(hvVictory);
     console.log(document.getElementById("HV1").innerHTML+"es más fuerte!");
   }else if(hv2>hv1){
     let hvVictory=document.createElement('h2');
-    hvVictory.innerHTML=`${HV2} es más poderoso que ${HV1}`;
+    hvVictory.innerHTML=`${HV2} es más poderos@ que ${HV1}`;
     hvVictory.classList.add("hvVictory");
     result.appendChild(hvVictory);
 
@@ -172,7 +162,7 @@ function elMasPoderoso(hv1,hv2){
     
   }else if (hv2===hv1){
     let hvVictory=document.createElement('h2');
-    hvVictory.innerHTML=`${HV1}, ${HV2} son igual de poderosos.`;
+    hvVictory.innerHTML=`${HV1}, ${HV2} son igual de poderos@s.`;
     result.appendChild(hvVictory);
     hvVictory.classList.add("hvVictory");
     console.log(document.getElementById("HV1").innerHTML+"son igual de fuertes!"+document.getElementById("HV2").innerHTML);
