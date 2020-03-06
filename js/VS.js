@@ -70,7 +70,7 @@ function searchHV1(nameSearch) {
       document.getElementsByTagName("img")[2].src=img;
       document.getElementsByTagName("h2")[0].innerText=`${name}`;
       let divTest=document.createElement('div');
-      divTest.innerHTML = `<div class="hv1"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
+      divTest.innerHTML = `<div class="hv2"><h4>Stats</h4><div class="progress bg-secondary "><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-warning text-dark" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-success text-white" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-info text-white" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-dark text-white" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
       
       powerStats1.forEach(stat =>{
           totalStats1+=stat*1;
@@ -88,58 +88,49 @@ function searchHV1(nameSearch) {
 
 ///BUSQUEDA DEL SEGUNDO
 function searchHV2(nameSearch) {
-    fetch(
-      `https://www.superheroapi.com/api.php/10219098893255282/search/${nameSearch}`
-    )
-      .then(response => {
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          throw new TypeError("Oops, we haven't got JSON!");
-        }
-        return response.json();
-      })
-      .then(data => {
-        /* process your data further */
-        if (document.querySelector(".hv2")){
-          divHV2.removeChild(divHV2.firstChild);
-        }
-        if (document.querySelector(".hvVictory")!=null){
-          console.log("estoy aquí!");
-          result.firstChild.remove();
-          
-        }
+  divHV2.innerHTML="";
+  fetch(
+    `https://www.superheroapi.com/api.php/10219098893255282/search/${nameSearch}`
+  )
+    .then(response => {
+      const contentType = response.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new TypeError("Oops, we haven't got JSON!");
+      }
+      return response.json();
+    })
+    .then(data => {
+      /* process your data further */
+      var img = data.results[0].image.url;
+      var name = data.results[0].name;
+      var int = data.results[0].powerstats.intelligence;
+      var stre = data.results[0].powerstats.strength;
+      var speed = data.results[0].powerstats.speed;
+      var dur = data.results[0].powerstats.durability;
+      var pow = data.results[0].powerstats.power;
+      var com = data.results[0].powerstats.combat;
+      powerStats2.push(int)
+      powerStats2.push(stre)
+      powerStats2.push(speed)
+      powerStats2.push(dur)
+      powerStats2.push(pow)
+      powerStats2.push(com)
+      document.getElementsByTagName("img")[4].src=img;
+      document.getElementsByTagName("h2")[1].innerText=`${name}`;
+      let divTest=document.createElement('div');
+      divTest.innerHTML = `<div class="hv2"><h4>Stats</h4><div class="progress bg-secondary "><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-warning text-dark" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-success text-white" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-info text-white" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary "><div class="progress-bar bg-dark text-white" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
+      
+      powerStats2.forEach(stat =>{
+          totalStats2+=stat*1;
+      });
+      
+      totalStats2= Math.floor(totalStats2/6);
+      
+      divHV2.appendChild(divTest);
+      console.log(totalStats2);
         
-
-        var img = data.results[0].image.url;
-        var name = data.results[0].name;
-        var int = data.results[0].powerstats.intelligence;
-        var stre = data.results[0].powerstats.strength;
-        var speed = data.results[0].powerstats.speed;
-        var dur = data.results[0].powerstats.durability;
-        var pow = data.results[0].powerstats.power;
-        var com = data.results[0].powerstats.combat;
-        powerStats2.push(int)
-        powerStats2.push(stre)
-        powerStats2.push(speed)
-        powerStats2.push(dur)
-        powerStats2.push(pow)
-        powerStats2.push(com)
-        document.getElementsByTagName("img")[4].src=img;
-        document.getElementsByTagName("h2")[1].innerText=`${name}`;
-        let divTest=document.createElement('div');
-        divTest.innerHTML = `<div class="hv2"><h4>Stats</h4><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${int}%;">Inteligencia: ${int}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar bg-danger" style="width: ${stre}%;">Fuerza ${stre}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${speed}%;">Velocidad: ${speed}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${dur}%;">Durabilidad: ${dur}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${pow}%;">Poder: ${pow}</div></div><br><div class="progress bg-secondary mb-3"><div class="progress-bar" style="width: ${com}%;">Combate: ${com}</div></div></div>`;
-        
-        powerStats2.forEach(stat =>{
-            totalStats2+=stat*1;
-        });
-        
-        totalStats2= Math.floor(totalStats2/6);
-        
-        divHV2.appendChild(divTest);
-        console.log(totalStats2);
-          
-      })
-      .catch(error => console.error(error));
+    })
+    .catch(error => console.error(error));
   //   document.querySelector(".busqueda").classList.remove("d-none");
   }
 function elMasPoderoso(hv1,hv2){
@@ -149,12 +140,12 @@ function elMasPoderoso(hv1,hv2){
   
   if (hv1>hv2){
     let hvVictory=document.createElement('h2');
-    hvVictory.innerHTML=`${HV1} es más poderos@ que ${HV2}`;
+    hvVictory.innerHTML=`${HV2} no es rival para ${HV1}`;
     result.appendChild(hvVictory);
-    console.log(document.getElementById("HV1").innerHTML+"es más fuerte!");
+    console.log(document.getElementById("HV1").innerHTML+"es mas fuerte!");
   }else if(hv2>hv1){
     let hvVictory=document.createElement('h2');
-    hvVictory.innerHTML=`${HV2} es más poderos@ que ${HV1}`;
+    hvVictory.innerHTML=`${HV1} no es rival para ${HV2}`;
     hvVictory.classList.add("hvVictory");
     result.appendChild(hvVictory);
 
